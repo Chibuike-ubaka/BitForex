@@ -1,3 +1,6 @@
+
+
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Passions+Conflict&family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700;900&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 h1,
@@ -13,7 +16,6 @@ h6 {
 a {
   text-decoration: none;
   font-weight: 700;
-  color: white;
 }
 
 a:hover {
@@ -21,7 +23,6 @@ a:hover {
 }
 
 .tab-text {
-  color: rgb(17, 153, 142);
   color: linear-gradient(
     90deg,
     rgba(17, 153, 142, 1) 35%,
@@ -112,5 +113,25 @@ body {
 }
 
 /* nav bar ends */
+/* svg for Hero background*/
 
-/* space for the login and sign up form*/
+.custom-shape-divider-bottom-1679731908 {
+   
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1679731908 svg {
+    position: relative;
+    display: block;
+    width: calc(119% + 1.3px);
+    height: 201px;
+}
+
+.custom-shape-divider-bottom-1679731908 .shape-fill {
+    fill: #FFFFFF;
+}
