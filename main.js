@@ -94,17 +94,65 @@ partnershipSection.classList.add('animate__animated', 'animate__fadeInUp');
 
 
 //Count section
-// Get the count elements
-const registeredUsers = document.getElementById("registered-users");
-const supportedCountries = document.getElementById("supported-countries");
-const investedAmount = document.getElementById("invested-amount");
-const paidToCustomers = document.getElementById("paid-to-customers");
+// set the target numbers
+const registeredUsersTarget = 10000;
+const countriesSupportedTarget = 50;
+const amountInvestedTarget = 500;
+const amountPaidTarget = 100;
 
-// Set the count values
-registeredUsers.textContent = "10000"; // example value
-supportedCountries.textContent = "150"; // example value
-investedAmount.textContent = "$10000000"; // example value
-paidToCustomers.textContent = "$15000000"; // example value
+// get the elements
+const registeredUsersCount = document.getElementById('registered-users');
+const countriesSupportedCount = document.getElementById('countries-supported');
+const amountInvestedCount = document.getElementById('amount-invested');
+const amountPaidCount = document.getElementById('amount-paid');
+
+// set the initial values
+let registeredUsersValue = 0;
+let countriesSupportedValue = 0;
+let amountInvestedValue = 0;
+let amountPaidValue = 0;
+
+// set the update interval (in milliseconds)
+const updateInterval = 50;
+
+// create the update function
+function updateCounters() {
+// update registered users
+registeredUsersValue += Math.ceil((registeredUsersTarget - registeredUsersValue) / 100);
+registeredUsersCount.innerText = registeredUsersValue.toLocaleString();
+
+// update countries supported
+countriesSupportedValue += Math.ceil((countriesSupportedTarget - countriesSupportedValue) / 100);
+countriesSupportedCount.innerText = countriesSupportedValue.toLocaleString();
+
+// update amount invested
+amountInvestedValue += Math.ceil((amountInvestedTarget - amountInvestedValue) / 100);
+amountInvestedCount.innerText = amountInvestedValue.toLocaleString();
+
+// update amount paid to customers
+amountPaidValue += Math.ceil((amountPaidTarget - amountPaidValue) / 100);
+amountPaidCount.innerText = amountPaidValue.toLocaleString();
+
+// check if all targets have been reached
+if (registeredUsersValue >= registeredUsersTarget &&
+countriesSupportedValue >= countriesSupportedTarget &&
+amountInvestedValue >= amountInvestedTarget &&
+amountPaidValue >= amountPaidTarget) {
+// stop the update interval
+clearInterval(interval);
+}
+}
+
+// start the update interval
+const interval = setInterval(updateCounters, updateInterval);
+
+
+
+
+
+
+
+
 
 
 
